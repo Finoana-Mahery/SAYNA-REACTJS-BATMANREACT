@@ -1,0 +1,19 @@
+
+$borderLine: 2px solid rgba(255, 255, 255, 0.261);
+
+.eshop{
+    background-image: url("../../assets/bg/bg_1.png");
+    background-repeat: no-repeat;
+    background-size:contain ;
+    height:10000px;
+    width: inherit;
+   
+}
+.containte{
+    width: 80%;
+    height:inherit;
+    background-color: rgba(250, 235, 215, 0);
+    border-left: $borderLine;
+    border-right: $borderLine;
+    margin: 0 auto;
+}
