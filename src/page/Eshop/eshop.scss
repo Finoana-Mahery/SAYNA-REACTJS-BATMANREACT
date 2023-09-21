@@ -17,3 +17,44 @@ $borderLine: 2px solid rgba(255, 255, 255, 0.261);
     border-right: $borderLine;
     margin: 0 auto;
 }
+.title{
+    height: 900px;
+    width: 100%;
+    background-color: rgba(127, 255, 212, 0);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.title>h1{
+    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: bold;
+    display: block;
+    width: 800px;
+    margin-left: 5%;
+    padding-bottom: 160px;
+   
+}
+.float_control{
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    right: 6.8%;
+    gap: 20px;
+}
+.float_control>a>img:hover{
+    filter: brightness(75%) sepia(80) saturate(20) hue-rotate(100deg);
+}
+.down{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+
+}
+.down>img{
+    cursor: pointer;
+}

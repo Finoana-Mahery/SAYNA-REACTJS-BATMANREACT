@@ -6,25 +6,11 @@ import { useState, useEffect } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 
-export default function NavBar({ number }) {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+export default function NavBar({ number, windowWidth }) {
   const [showMenu, setShowMenu] = useState(false);
-
   // Fonction pour mettre à jour la largeur de l'écran
-  const updateWindowWidth = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    // Écoute les changements de largeur de l'écran
-    window.addEventListener("resize", updateWindowWidth);
-
-    // Nettoyage de l'écouteur d'événement lors du démontage du composant
-    return () => {
-      window.removeEventListener("resize", updateWindowWidth);
-    };
-  }, []);
   const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     // Affiche le bouton de menu lorsque la largeur est inférieure à 1000px
     if (windowWidth < 1000) {
@@ -34,6 +20,7 @@ export default function NavBar({ number }) {
       setMenuOpen(false);
     }
   }, [windowWidth]);
+
   //Huberger-menu logique
 
   const toggleMenu = () => {
@@ -79,7 +66,7 @@ export default function NavBar({ number }) {
                   style={{
                     border: number == 3 && "1px solid white",
                     backgroundColor:
-                      number == 3 && "rgba(255, 255, 255, 0.105)",
+                      number == 3 && "rgba(255, 255, 255, 0.305)",
                     fontWeight: number == 3 && "bold",
                   }}
                 >
@@ -145,4 +132,5 @@ export default function NavBar({ number }) {
 }
 NavBar.propTypes = {
   number: PropTypes.number,
+  windowWidth: PropTypes.number,
 };
