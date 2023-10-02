@@ -11,11 +11,13 @@ $borderLine: 2px solid rgba(255, 255, 255, 0.261);
 }
 .containte{
     width: 80%;
+    max-width: 1440px;
     height:inherit;
     background-color: rgba(250, 235, 215, 0);
     border-left: $borderLine;
     border-right: $borderLine;
     margin: 0 auto;
+    
 }
 .title{
     height: 900px;
@@ -42,7 +44,7 @@ $borderLine: 2px solid rgba(255, 255, 255, 0.261);
     align-items: center;
     position: fixed;
     top: 50%;
-    right: 6.8%;
+    right: 9.7%;
     gap: 20px;
 }
 .float_control>a>img:hover{

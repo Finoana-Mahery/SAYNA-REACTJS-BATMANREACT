@@ -5,11 +5,13 @@ import logo from "../../assets/logos/logohome.png";
 import { useState, useEffect } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
+import { useWindowsWidth } from "../../Context";
 
-export default function NavBar({ number, windowWidth }) {
+export default function NavBar({ number }) {
   const [showMenu, setShowMenu] = useState(false);
   // Fonction pour mettre à jour la largeur de l'écran
   const [menuOpen, setMenuOpen] = useState(false);
+  const windowWidth = useWindowsWidth();
 
   useEffect(() => {
     // Affiche le bouton de menu lorsque la largeur est inférieure à 1000px
@@ -34,9 +36,13 @@ export default function NavBar({ number, windowWidth }) {
         <div className="menuBurger">
           <button className="hamburger-button" onClick={toggleMenu}>
             {menuOpen == false ? (
-              <HiOutlineMenu style={{ width: "35px", height: "auto" }} />
+              <HiOutlineMenu
+                style={{ width: "35px", height: "auto", cursor: "pointer" }}
+              />
             ) : (
-              <IoMdClose style={{ width: "35px", height: "auto" }} />
+              <IoMdClose
+                style={{ width: "35px", height: "auto", cursor: "pointer" }}
+              />
             )}
           </button>
           {menuOpen && (
@@ -47,7 +53,7 @@ export default function NavBar({ number, windowWidth }) {
                     borderBottom: number == 1 && "2px solid white",
                     fontWeight: number == 1 && "bold",
                     backgroundColor:
-                      number == 3 && "rgba(255, 255, 255, 0.105)",
+                      number == 1 && "rgba(255, 255, 255, 0.105)",
                   }}
                 >
                   <Link>HOME</Link>
@@ -57,7 +63,7 @@ export default function NavBar({ number, windowWidth }) {
                     borderBottom: number == 2 && "2px solid white",
                     fontWeight: number == 2 && "bold",
                     backgroundColor:
-                      number == 3 && "rgba(255, 255, 255, 0.105)",
+                      number == 2 && "rgba(255, 255, 255, 0.105)",
                   }}
                 >
                   <Link>GAME</Link>
@@ -79,7 +85,7 @@ export default function NavBar({ number, windowWidth }) {
                     borderBottom: number == 4 && "2px solid white",
                     fontWeight: number == 4 && "bold",
                     backgroundColor:
-                      number == 3 && "rgba(255, 255, 255, 0.105)",
+                      number == 4 && "rgba(255, 255, 255, 0.105)",
                   }}
                 >
                   <Link to="/monCompte">MON COMPTE</Link>

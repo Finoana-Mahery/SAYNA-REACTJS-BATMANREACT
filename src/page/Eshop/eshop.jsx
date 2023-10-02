@@ -6,14 +6,19 @@ import facebook from "../../assets/icones/icon_facebook.png";
 import insta from "../../assets/icones/icon_ig.png";
 import twitter from "../../assets/icones/icon_tw.png";
 import down from "../../assets/icones/flèche_down_header.png";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { PropTypes } from "prop-types";
+import Liste from "../../composant/Liste/liste.jsx";
+import { useWindowsWidth } from "../../Context.jsx";
 
-export default function Eshop({ windowWidth }) {
+export default function Eshop() {
+  const windowWidth = useWindowsWidth();
   return (
     <div className="eshop">
       <div className="containte">
-        <NavBar number={3} windowWidth={windowWidth} />
+        {/*Navigation Bar */}
+        <NavBar number={3} />
+        {/*Titre h1 */}
         <div
           className="title"
           style={{
@@ -53,10 +58,12 @@ export default function Eshop({ windowWidth }) {
             </a>
           </div>
         )}
-
+        {/*Icons fleche bas*/}
         <div className="down">
           <img src={down} alt="" />
         </div>
+        {/*Liste Catalauge*/}
+        <Liste></Liste>
       </div>
     </div>
   );
